@@ -34,13 +34,13 @@ void NewPerson(Memberptr* head)
 
 	Memberptr newnode = (Memberptr)malloc(sizeof(Member));
 
-	printf("\n½Ğ¿é¤J©m¦W: ");
+	printf("\nè«‹è¼¸å…¥å§“å: ");
 	scanf("%s", newnode->name);
 	while (current != NULL)
 	{
 		if (strcmp(current->name, newnode->name) == 0)
 		{
-			printf("\n­«½Æ©m¦W¡A­«·s¿é¤J: ");
+			printf("\né‡è¤‡å§“åï¼Œé‡æ–°è¼¸å…¥: ");
 			scanf("%s", newnode->name);
 			current = *head;
 		}
@@ -52,12 +52,12 @@ void NewPerson(Memberptr* head)
 
 	current = *head;
 
-	printf("\n½Ğ¿é¤J¹q¸Ü: ");
+	printf("\nè«‹è¼¸å…¥é›»è©±: ");
 	scanf("%s", newnode->phone);
 
 	while (strlen(newnode->phone) != 10 || newnode->phone[0] != '0' || newnode->phone[1] != '9')
 	{
-		printf("\n¹q¸Ü®æ¦¡¿ù»~¡A­«·s¿é¤J: ");
+		printf("\né›»è©±æ ¼å¼éŒ¯èª¤ï¼Œé‡æ–°è¼¸å…¥: ");
 		scanf("%s", newnode->phone);
 	}
 
@@ -65,7 +65,7 @@ void NewPerson(Memberptr* head)
 	{
 		if (strcmp(current->phone, newnode->phone) == 0)
 		{
-			printf("\n­«½Æ¹q¸Ü¡A­«·s¿é¤J: ");
+			printf("\né‡è¤‡é›»è©±ï¼Œé‡æ–°è¼¸å…¥: ");
 			scanf("%s", newnode->phone);
 			current = *head;
 		}
@@ -78,24 +78,24 @@ void NewPerson(Memberptr* head)
 
 	int choice = 0;
 
-	printf("\n½Ğ¿ï¾Ü¨¤¦â: 1)ºô­¶¤H­û 2)«áºİ¤H­û 3)¾÷°Ê¤H­û: ");
+	printf("\nè«‹é¸æ“‡è§’è‰²: 1)ç¶²é äººå“¡ 2)å¾Œç«¯äººå“¡ 3)æ©Ÿå‹•äººå“¡: ");
 	scanf("%d", &choice);
 	while (choice < 1 || choice>3)
 	{
-		printf("\n¿é¤J¿ù»~¡A½Ğ¿ï¾Ü¨¤¦â: 1)ºô­¶¤H­û 2)«áºİ¤H­û 3)¾÷°Ê¤H­û: ");
+		printf("\nè¼¸å…¥éŒ¯èª¤ï¼Œè«‹é¸æ“‡è§’è‰²: 1)ç¶²é äººå“¡ 2)å¾Œç«¯äººå“¡ 3)æ©Ÿå‹•äººå“¡: ");
 		scanf("%d", &choice);
 	}
 	if (choice == 1)
 	{
-		strcpy(newnode->role, "ºô­¶¤H­û");
+		strcpy(newnode->role, "ç¶²é äººå“¡");
 	}
 	else if (choice == 2)
 	{
-		strcpy(newnode->role, "«áºİ¤H­û");
+		strcpy(newnode->role, "å¾Œç«¯äººå“¡");
 	}
 	else
 	{
-		strcpy(newnode->role, "¾÷°Ê¤H­û");
+		strcpy(newnode->role, "æ©Ÿå‹•äººå“¡");
 	}
 	newnode->next = (*head);
 	*head = newnode;
@@ -108,7 +108,7 @@ void Delete(Memberptr* head)
 	Memberptr current = *head;
 	Memberptr pre = NULL;
 
-	printf("\n½Ğ¿é¤J­n§R°£ªº¤H­û: ");
+	printf("\nè«‹è¼¸å…¥è¦åˆªé™¤çš„äººå“¡: ");
 	scanf("%s", del);
 
 	while (current != NULL)
@@ -149,11 +149,11 @@ void Delete(Memberptr* head)
 	}
 	if (a == 1)
 	{
-		printf("\n¤w§R°£¤H­û\n");
+		printf("\nå·²åˆªé™¤äººå“¡\n");
 	}
 	else
 	{
-		printf("\n¥¼§ä¨ì¦¹¤H\n");
+		printf("\næœªæ‰¾åˆ°æ­¤äºº\n");
 	}
 }
 
@@ -162,7 +162,7 @@ void Updatemem(Memberptr* head)
 	Memberptr current = *head;
 	int a = 0;
 	char name[20] = { 0 };
-	printf("\n½Ğ¿é¤J­n­×§ï¸ê°Tªº¤H­û: ");
+	printf("\nè«‹è¼¸å…¥è¦ä¿®æ”¹è³‡è¨Šçš„äººå“¡: ");
 	scanf("%s", name);
 	while (current != NULL)
 	{
@@ -170,17 +170,17 @@ void Updatemem(Memberptr* head)
 		{
 			a = 1;
 			int what = 0;
-			printf("\n1)§ó§ï©m¦W 2)§ó§ï¹q¸Ü 3)§ó§ï¨¤¦â: ");
+			printf("\n1)æ›´æ”¹å§“å 2)æ›´æ”¹é›»è©± 3)æ›´æ”¹è§’è‰²: ");
 			scanf("%d", &what);
 			while (what < 1 || what>3)
 			{
-				printf("\n­«·s¿é¤J: 1)§ó§ï©m¦W 2)§ó§ï¹q¸Ü 3)§ó§ï¨¤¦â: ");
+				printf("\né‡æ–°è¼¸å…¥: 1)æ›´æ”¹å§“å 2)æ›´æ”¹é›»è©± 3)æ›´æ”¹è§’è‰²: ");
 				scanf("%d", &what);
 			}
 			if (what == 1)
 			{
 				char name2[20] = { 0 };
-				printf("\n½Ğ¿é¤J­n§ó§ïªº©m¦W: ");
+				printf("\nè«‹è¼¸å…¥è¦æ›´æ”¹çš„å§“å: ");
 				scanf("%s", name2);
 				Memberptr check = *head;
 
@@ -188,7 +188,7 @@ void Updatemem(Memberptr* head)
 				{
 					if (strcmp(check->name, name2) == 0)
 					{
-						printf("\n­«½Æ©m¦W¡A­«·s¿é¤J");
+						printf("\né‡è¤‡å§“åï¼Œé‡æ–°è¼¸å…¥");
 						scanf("%s", name2);
 						check = *head;
 					}
@@ -202,31 +202,31 @@ void Updatemem(Memberptr* head)
 			}
 			else if (what == 2)
 			{
-				printf("\n½Ğ¿é¤J­n§ó§ïªº¹q¸Ü: ");
+				printf("\nè«‹è¼¸å…¥è¦æ›´æ”¹çš„é›»è©±: ");
 				scanf("%s", current->phone);
 				break;
 			}
 			else
 			{
 				int choice = 0;
-				printf("\n½Ğ¿ï¾Ü­n§ó§ïªº¨¤¦â:1)ºô­¶¤H­û 2)«áºİ¤H­û 3)¾÷°Ê¤H­û: ");
+				printf("\nè«‹é¸æ“‡è¦æ›´æ”¹çš„è§’è‰²:1)ç¶²é äººå“¡ 2)å¾Œç«¯äººå“¡ 3)æ©Ÿå‹•äººå“¡: ");
 				scanf("%d", &choice);
 				while (choice < 1 || choice>3)
 				{
-					printf("\n¿é¤J¿ù»~: 1)ºô­¶¤H­û 2)«áºİ¤H­û 3)¾÷°Ê¤H­û: ");
+					printf("\nè¼¸å…¥éŒ¯èª¤: 1)ç¶²é äººå“¡ 2)å¾Œç«¯äººå“¡ 3)æ©Ÿå‹•äººå“¡: ");
 					scanf("%d", &choice);
 				}
 				if (choice == 1)
 				{
-					strcpy(current->role, "ºô­¶¤H­û");
+					strcpy(current->role, "ç¶²é äººå“¡");
 				}
 				else if (choice == 2)
 				{
-					strcpy(current->role, "«áºİ¤H­û");
+					strcpy(current->role, "å¾Œç«¯äººå“¡");
 				}
 				else
 				{
-					strcpy(current->role, "¾÷°Ê¤H­û");
+					strcpy(current->role, "æ©Ÿå‹•äººå“¡");
 				}
 				break;
 			}
@@ -238,11 +238,11 @@ void Updatemem(Memberptr* head)
 	}
 	if (a == 1)
 	{
-		printf("\n¤w­×§ï§¹¦¨\n");
+		printf("\nå·²ä¿®æ”¹å®Œæˆ\n");
 	}
 	else
 	{
-		printf("\n¥¼§ä¨ì¦¹¤H­û\n");
+		printf("\næœªæ‰¾åˆ°æ­¤äººå“¡\n");
 	}
 }
 
@@ -251,15 +251,15 @@ void Printfmem(Memberptr* head)
 	Memberptr current = *head;
 	if (current == NULL)
 	{
-		printf("\n©|µL¸ê°T\n");
+		printf("\nå°šç„¡è³‡è¨Š\n");
 	}
 	else
 	{
 		while (current != NULL)
 		{
-			printf("\n¤H­û©m¦W: %s", current->name);
-			printf("\n¤H­û¹q¸Ü: %s", current->phone);
-			printf("\n¤H­û¨¤¦â: %s\n", current->role);
+			printf("\näººå“¡å§“å: %s", current->name);
+			printf("\näººå“¡é›»è©±: %s", current->phone);
+			printf("\näººå“¡è§’è‰²: %s\n", current->role);
 			current = current->next;
 		}
 	}
@@ -272,11 +272,11 @@ int Typefunc(char*** type)
 	if (*type == NULL)
 	{
 		int n = 0;
-		printf("\n½Ğ¿é¤JÃş§O¼Æ¶q: ");
+		printf("\nè«‹è¼¸å…¥é¡åˆ¥æ•¸é‡: ");
 		scanf("%d", &n);
 		while (n < 0 || n>20)
 		{
-			printf("\n¿é¤J¿ù»~¡A­«·s¿é¤J: ");
+			printf("\nè¼¸å…¥éŒ¯èª¤ï¼Œé‡æ–°è¼¸å…¥: ");
 			scanf("%d", &n);
 		}
 
@@ -285,13 +285,13 @@ int Typefunc(char*** type)
 		for (int i = 0; i < n; i++)
 		{
 			char str[50] = { NULL };
-			printf("\n½Ğ¿é¤J²Ä%d­ÓÃş§O¦WºÙ", i + 1);
+			printf("\nè«‹è¼¸å…¥ç¬¬%då€‹é¡åˆ¥åç¨±", i + 1);
 			scanf("%s", str);
 			for (int k = 0; k < i; k++)
 			{
 				if (strcmp((*type)[k], str) == 0)
 				{
-					printf("\n¦WºÙ­«½Æ¡A­«·s¿é¤J: ");
+					printf("\nåç¨±é‡è¤‡ï¼Œé‡æ–°è¼¸å…¥: ");
 					scanf("%s", str);
 					k = -1;
 				}
@@ -306,12 +306,12 @@ int Typefunc(char*** type)
 			printf("\n%s", (*type)[i]);
 		}
 
-		printf("\n©w¸q¦¨¥\!!\n");
+		printf("\nå®šç¾©æˆåŠŸ!!\n");
 		return n;
 	}
 	else
 	{
-		printf("\n¤w©w¸q¹LÃş§O,µLªk¦A¦¸©w¸q\n");
+		printf("\nå·²å®šç¾©éé¡åˆ¥,ç„¡æ³•å†æ¬¡å®šç¾©\n");
 		return 0;
 	}
 }
@@ -321,22 +321,22 @@ void Newjob(Jobptr* head, Memberptr* memhead, char*** type, int n)
 	if (*memhead == NULL || *type == NULL)
 	{
 		if (*memhead == NULL)
-			printf("\n¥Ø«e©|µL¤H­û¡A½Ğ·s¼W¤H­û«á¦A¨Ï¥Î¦¹¥\¯à\n");
+			printf("\nç›®å‰å°šç„¡äººå“¡ï¼Œè«‹æ–°å¢äººå“¡å¾Œå†ä½¿ç”¨æ­¤åŠŸèƒ½\n");
 		else
-			printf("\n¥Ø«e©|µLÃş§O¡A½Ğ·s¼W¤H­û«á¦A¨Ï¥Î¦¹¥\¯à\n");
+			printf("\nç›®å‰å°šç„¡é¡åˆ¥ï¼Œè«‹æ–°å¢äººå“¡å¾Œå†ä½¿ç”¨æ­¤åŠŸèƒ½\n");
 	}
 	else
 	{
 		Jobptr current = *head;
 		Jobptr newnode = (Jobptr)malloc(sizeof(Job));
 		newnode->next = NULL;
-		printf("\n½Ğ¿é¤J¥ô°È¦WºÙ: ");
+		printf("\nè«‹è¼¸å…¥ä»»å‹™åç¨±: ");
 		scanf("%s", newnode->name);
 		while (current != NULL)
 		{
 			if (strcmp(newnode->name, current->name) == 0)
 			{
-				printf("¿é¤J­«½Æ¡A­«·s¿é¤J: ");
+				printf("è¼¸å…¥é‡è¤‡ï¼Œé‡æ–°è¼¸å…¥: ");
 				scanf("%s", newnode->name);
 				current = *head;
 			}
@@ -346,21 +346,21 @@ void Newjob(Jobptr* head, Memberptr* memhead, char*** type, int n)
 			}
 		}
 		current = *head;
-		printf("\n½Ğ¿é¤J¥ô°È»¡©ú(50¦r¤º): ");
+		printf("\nè«‹è¼¸å…¥ä»»å‹™èªªæ˜(50å­—å…§): ");
 		scanf("%s", newnode->explain);
-		printf("\n½Ğ¿é¤J¥ô°È­«­n©Ê: ");
+		printf("\nè«‹è¼¸å…¥ä»»å‹™é‡è¦æ€§: ");
 		scanf("%s", newnode->importance);
 
 
 		Memberptr memcur = *memhead;
-		printf("\n¥Ø«e¤H­û¦³: ");
+		printf("\nç›®å‰äººå“¡æœ‰: ");
 		while (memcur != NULL)
 		{
 			printf("\n%s", memcur->name);
 			memcur = memcur->next;
 		}
 
-		printf("\n½Ğ¿é¤J­t³d¤H­û: ");
+		printf("\nè«‹è¼¸å…¥è² è²¬äººå“¡: ");
 		scanf("%s", newnode->person);
 
 		memcur = *memhead;
@@ -376,29 +376,29 @@ void Newjob(Jobptr* head, Memberptr* memhead, char*** type, int n)
 				memcur = memcur->next;
 				if (memcur == NULL)
 				{
-					printf("\nµL¦¹¤H­û¡A½Ğ­«·s¿é¤J: ");
+					printf("\nç„¡æ­¤äººå“¡ï¼Œè«‹é‡æ–°è¼¸å…¥: ");
 					scanf("%s", newnode->person);
 					memcur = *memhead;
 				}
 			}
 		}
-		printf("\n½Ğ¿é¤J®Éµ{: ");
+		printf("\nè«‹è¼¸å…¥æ™‚ç¨‹: ");
 		scanf("%s", newnode->time);
-		printf("\n½Ğ¿é¤J¶i«×: ");
+		printf("\nè«‹è¼¸å…¥é€²åº¦: ");
 		scanf("%s", newnode->schedule);
-		printf("\n½Ğ¿é¤Jµù°O: ");
+		printf("\nè«‹è¼¸å…¥è¨»è¨˜: ");
 		scanf("%s", newnode->mark);
 
 
 		char** typearr = *type;
 
-		printf("\n¥Ø«e¥ô°ÈÃş§O¦³: ");
+		printf("\nç›®å‰ä»»å‹™é¡åˆ¥æœ‰: ");
 		for (int i = 0; i < n; i++)
 		{
 			printf("\n%s", typearr[i]);
 		}
 
-		printf("\n½Ğ¿é¤J¥ô°ÈÃş§O: ");
+		printf("\nè«‹è¼¸å…¥ä»»å‹™é¡åˆ¥: ");
 		scanf("%s", newnode->type);
 
 		for (int i = 0; i < n; i++)
@@ -409,7 +409,7 @@ void Newjob(Jobptr* head, Memberptr* memhead, char*** type, int n)
 			}
 			if (i == n - 1)
 			{
-				printf("\nµL¦¹Ãş§O¡A½Ğ­«·s¿é¤J: ");
+				printf("\nç„¡æ­¤é¡åˆ¥ï¼Œè«‹é‡æ–°è¼¸å…¥: ");
 				scanf("%s", newnode->type);
 				i = -1;
 			}
@@ -423,20 +423,20 @@ void jobprintf(Jobptr* head)
 	Jobptr current = *head;
 	if (current == NULL)
 	{
-		printf("\nµL¦¹¸ê°T\n");
+		printf("\nç„¡æ­¤è³‡è¨Š\n");
 	}
 	else
 	{
 		while (current != NULL)
 		{
-			printf("\n¥ô°È¦WºÙ: %s", (current)->name);
-			printf("\n¥ô°ÈÃş§O: %s\n", (current)->type);
-			printf("¥ô°È»¡©ú: %s\n", (current)->explain);
-			printf("­«­n©Ê: %s\n", (current)->importance);
-			printf("­t³d¤H­û: %s\n", (current)->person);
-			printf("®Éµ{: %s\n", (current)->time);
-			printf("¥Ø«e¶i«×: %s\n", (current)->schedule);
-			printf("µù°O: %s\n", (current)->mark);
+			printf("\nä»»å‹™åç¨±: %s", (current)->name);
+			printf("\nä»»å‹™é¡åˆ¥: %s\n", (current)->type);
+			printf("ä»»å‹™èªªæ˜: %s\n", (current)->explain);
+			printf("é‡è¦æ€§: %s\n", (current)->importance);
+			printf("è² è²¬äººå“¡: %s\n", (current)->person);
+			printf("æ™‚ç¨‹: %s\n", (current)->time);
+			printf("ç›®å‰é€²åº¦: %s\n", (current)->schedule);
+			printf("è¨»è¨˜: %s\n", (current)->mark);
 			current = (current)->next;
 		}
 	}
@@ -450,35 +450,35 @@ void jobtypeup(Jobptr* jhead, char*** thead, int n)
 	char update[20] = { NULL };
 	if (current == NULL)
 	{
-		printf("\n©|µL¸ê°T\n");
+		printf("\nå°šç„¡è³‡è¨Š\n");
 	}
 	else
 	{
-		printf("\n½Ğ¿é¤J­n§ó§ïÃş§Oªº¥ô°È¦WºÙ");
+		printf("\nè«‹è¼¸å…¥è¦æ›´æ”¹é¡åˆ¥çš„ä»»å‹™åç¨±");
 		scanf("%s", update);
 		while (current != NULL)
 		{
 			if (strcmp(update, current->name) == 0)
 			{
 
-				printf("\n¥Ø«eÃş§O¦³: ");
+				printf("\nç›®å‰é¡åˆ¥æœ‰: ");
 				for (int i = 0; i < n; i++)
 				{
 					printf("\n%s ", typearr[i]);
 				}
-				printf("\n½Ğ¿é¤JÃş§O: ");
+				printf("\nè«‹è¼¸å…¥é¡åˆ¥: ");
 				scanf("%s", current->type);
 
 				for (int i = 0; i < n; i++)
 				{
 					if (strcmp(typearr[i], current->type) == 0)
 					{
-						printf("§ó§ï¦¨¥\\n");
+						printf("æ›´æ”¹æˆåŠŸ\n");
 						break;
 					}
 					if (i == n - 1)
 					{
-						printf("\nµL¦¹Ãş§O¡A½Ğ­«·s¿é¤J: ");
+						printf("\nç„¡æ­¤é¡åˆ¥ï¼Œè«‹é‡æ–°è¼¸å…¥: ");
 						scanf("%s", current->type);
 						i = -1;
 					}
@@ -491,7 +491,7 @@ void jobtypeup(Jobptr* jhead, char*** thead, int n)
 				current = current->next;
 				if (current == NULL)
 				{
-					printf("\n¥¼§ä¨ì¦¹¥ô°È\n");
+					printf("\næœªæ‰¾åˆ°æ­¤ä»»å‹™\n");
 					break;
 				}
 			}
@@ -504,13 +504,13 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 	Jobptr current = *head;
 	if (current == NULL)
 	{
-		printf("\n©|µL¸ê°T\n");
+		printf("\nå°šç„¡è³‡è¨Š\n");
 	}
 	else
 	{
 
 		char name[20] = { 0 };
-		printf("\n½Ğ¿é¤J¥ô°È¦WºÙ: ");
+		printf("\nè«‹è¼¸å…¥ä»»å‹™åç¨±: ");
 		scanf("%s", name);
 		while (current != NULL)
 		{
@@ -520,24 +520,24 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 
 				while (choice >= 1 && choice <= 8)
 				{
-					printf("\n1)­×§ï¥ô°È¦WºÙ 2)­×§ï¥ô°È»¡©ú 3)­×§ï­«­n©Ê 4)­×§ï­t³d¤H­û 5)­×§ï®Éµ{ 6)­×§ï¥Ø«e¶i«× 7)­×§ïµù°O 8)µ²§ô: ");
+					printf("\n1)ä¿®æ”¹ä»»å‹™åç¨± 2)ä¿®æ”¹ä»»å‹™èªªæ˜ 3)ä¿®æ”¹é‡è¦æ€§ 4)ä¿®æ”¹è² è²¬äººå“¡ 5)ä¿®æ”¹æ™‚ç¨‹ 6)ä¿®æ”¹ç›®å‰é€²åº¦ 7)ä¿®æ”¹è¨»è¨˜ 8)çµæŸ: ");
 					scanf("%d", &choice);
 					while (choice < 1 || choice>8)
 					{
-						printf("\n­«·s¿é¤J¡A 1)­×§ï¥ô°È¦WºÙ 2)­×§ï¥ô°È»¡©ú 3)­×§ï­«­n©Ê 4)­×§ï­t³d¤H­û 5)­×§ï®Éµ{ 6)­×§ï¥Ø«e¶i«× 7)­×§ïµù°O 8)µ²§ô: ");
+						printf("\né‡æ–°è¼¸å…¥ï¼Œ 1)ä¿®æ”¹ä»»å‹™åç¨± 2)ä¿®æ”¹ä»»å‹™èªªæ˜ 3)ä¿®æ”¹é‡è¦æ€§ 4)ä¿®æ”¹è² è²¬äººå“¡ 5)ä¿®æ”¹æ™‚ç¨‹ 6)ä¿®æ”¹ç›®å‰é€²åº¦ 7)ä¿®æ”¹è¨»è¨˜ 8)çµæŸ: ");
 						scanf("%d", &choice);
 					}
 					if (choice == 1)
 					{
 						char newname[20] = { 0 };
-						printf("\n¿é¤J·sªº¥ô°È¦WºÙ: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™åç¨±: ");
 						scanf("%s", newname);
 						Jobptr check = *head;
 						while (check != NULL)
 						{
 							if (strcmp(check->name, newname) == 0)
 							{
-								printf("\n­«½Æ¦WºÙ¡A­«·s¿é¤J: ");
+								printf("\né‡è¤‡åç¨±ï¼Œé‡æ–°è¼¸å…¥: ");
 								scanf("%s", newname);
 								check = *head;
 							}
@@ -550,12 +550,12 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 					}
 					else if (choice == 2)
 					{
-						printf("\n¿é¤J·sªº¥ô°È»¡©ú: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™èªªæ˜: ");
 						scanf("%s", current->explain);
 					}
 					else if (choice == 3)
 					{
-						printf("\n¿é¤J·sªº¥ô°È­«­n©Ê: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™é‡è¦æ€§: ");
 						scanf("%s", current->importance);
 					}
 					else if (choice == 4)
@@ -563,7 +563,7 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 						Memberptr mcur = *mhead;
 						char person[20] = { 0 };
 
-						printf("\n²{¦b¤H­û¦³: ");
+						printf("\nç¾åœ¨äººå“¡æœ‰: ");
 						while (mcur != NULL)
 						{
 							printf("\n%s", mcur->name);
@@ -571,7 +571,7 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 						}
 						mcur = *mhead;
 
-						printf("\n¿é¤J·sªº¥ô°È­t³d¤H­û: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™è² è²¬äººå“¡: ");
 						scanf("%s", person);
 
 						while (mcur != NULL)
@@ -586,7 +586,7 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 								mcur = mcur->next;
 								if (mcur == NULL)
 								{
-									printf("\n¥¼§ä¨ì¦¹¤H­û,½Ğ­«·s¿é¤J: ");
+									printf("\næœªæ‰¾åˆ°æ­¤äººå“¡,è«‹é‡æ–°è¼¸å…¥: ");
 									scanf("%s", person);
 									mcur = *mhead;
 								}
@@ -596,17 +596,17 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 					}
 					else if (choice == 5)
 					{
-						printf("\n¿é¤J·sªº¥ô°È®Éµ{: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™æ™‚ç¨‹: ");
 						scanf("%s", current->time);
 					}
 					else if (choice == 6)
 					{
-						printf("\n¿é¤J·sªº¥ô°È¥Ø«e¶i«×: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™ç›®å‰é€²åº¦: ");
 						scanf("%s", current->schedule);
 					}
 					else if (choice == 7)
 					{
-						printf("\n¿é¤J·sªº¥ô°Èµù°O: ");
+						printf("\nè¼¸å…¥æ–°çš„ä»»å‹™è¨»è¨˜: ");
 						scanf("%s", current->mark);
 					}
 					else if (choice == 8)
@@ -624,7 +624,7 @@ void updatejob(Jobptr* head, Memberptr* mhead)
 				current = current->next;
 				if (current == NULL)
 				{
-					printf("\nµL¦¹¥ô°È\n");
+					printf("\nç„¡æ­¤ä»»å‹™\n");
 					break;
 				}
 			}
@@ -664,22 +664,22 @@ void main()
 	int choice = 1;
 	while (choice >= 1 && choice <= 4)
 	{
-		printf("1)¤H­û¥\¯à 2)©w¸qÃş§O 3)¤u§@¥\¯à 4)µ²§ô: ");
+		printf("1)äººå“¡åŠŸèƒ½ 2)å®šç¾©é¡åˆ¥ 3)å·¥ä½œåŠŸèƒ½ 4)çµæŸ: ");
 		scanf_s("%d", &choice);
 		while (choice < 1 || choice>4)
 		{
-			printf("\n¿é¤J¿ù»~¡A 1)¤H­û¥\¯à 2)©w¸qÃş§O 3)¤u§@¥\¯à 4)µ²§ô: ");
+			printf("\nè¼¸å…¥éŒ¯èª¤ï¼Œ 1)äººå“¡åŠŸèƒ½ 2)å®šç¾©é¡åˆ¥ 3)å·¥ä½œåŠŸèƒ½ 4)çµæŸ: ");
 			scanf_s("%d", &choice);
 		}
 
 		if (choice == 1)
 		{
 			int Pchoice = 0;
-			printf("\n1)·s¼W¦¨­û 2)§R°£¦¨­û 3)­×§ï¦¨­û 4)¦L¥X©Ò¦³¦¨­û: ");
+			printf("\n1)æ–°å¢æˆå“¡ 2)åˆªé™¤æˆå“¡ 3)ä¿®æ”¹æˆå“¡ 4)å°å‡ºæ‰€æœ‰æˆå“¡: ");
 			scanf("%d", &Pchoice);
 			while (Pchoice < 1 || Pchoice>4)
 			{
-				printf("\n¿é¤J¿ù»~¡A1)·s¼W¦¨­û 2)§R°£¦¨­û 3)­×§ï¦¨­û 4)¦L¥X©Ò¦³¦¨­û: ");
+				printf("\nè¼¸å…¥éŒ¯èª¤ï¼Œ1)æ–°å¢æˆå“¡ 2)åˆªé™¤æˆå“¡ 3)ä¿®æ”¹æˆå“¡ 4)å°å‡ºæ‰€æœ‰æˆå“¡: ");
 				scanf("%d", &Pchoice);
 			}
 			if (Pchoice == 1)
@@ -710,11 +710,11 @@ void main()
 		else if (choice == 3)
 		{
 			int choice2 = 0;
-			printf("\n1)·s¼W¥ô°È 2)§ó§ï¥ô°ÈÃş§O 3)­×§ï¥ô°È¸ê°T 4)¦L¥X©Ò¦³¥ô°È: ");
+			printf("\n1)æ–°å¢ä»»å‹™ 2)æ›´æ”¹ä»»å‹™é¡åˆ¥ 3)ä¿®æ”¹ä»»å‹™è³‡è¨Š 4)å°å‡ºæ‰€æœ‰ä»»å‹™: ");
 			scanf("%d", &choice2);
 			while (choice2 < 1 || choice2>4)
 			{
-				printf("\n¿é¤J¿ù»~¡A1)·s¼W¥ô°È 2)§ó§ï¥ô°ÈÃş§O 3)­×§ï¥ô°È¸ê°T 4)¦L¥X©Ò¦³¥ô°È: ");
+				printf("\nè¼¸å…¥éŒ¯èª¤ï¼Œ1)æ–°å¢ä»»å‹™ 2)æ›´æ”¹ä»»å‹™é¡åˆ¥ 3)ä¿®æ”¹ä»»å‹™è³‡è¨Š 4)å°å‡ºæ‰€æœ‰ä»»å‹™: ");
 				scanf("%d", &choice2);
 			}
 			if (choice2 == 1)
